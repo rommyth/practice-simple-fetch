@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 
 export const getStaticProps = async () => {
@@ -13,6 +14,9 @@ export const getStaticProps = async () => {
 const ListName = ({ users }) => {
     return (
         <div>
+            <Head>
+                <title>List Fetch | rommyth</title>
+            </Head>
             <h1>List Fetch</h1>
             {users && users.map(user => (
                 <div key={user.id} className="list-name">

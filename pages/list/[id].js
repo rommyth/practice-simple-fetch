@@ -1,4 +1,4 @@
-import { useEffect } from "react/cjs/react.development";
+import Head from "next/head";
 import Link from "next/link";
 
 export const getStaticPaths = async () => {
@@ -28,16 +28,11 @@ export const getStaticProps = async (context) => {
 }
 
 const Details = ({ detailUser }) => {
-
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users/1")
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
-    }, [])
     return (
         <div>
+            <Head>
+                <title>Detail Fetch | rommyth</title>
+            </Head>
             {detailUser &&
                 <div key={detailUser.id}>
                     <h1>Detail User</h1>
